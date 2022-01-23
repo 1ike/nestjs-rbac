@@ -8,12 +8,12 @@ export class UsersService {
     {
       userId: 1,
       username: 'john',
-      password: 'changeme',
+      password: '$2b$10$z5N11MR3Y61D8OxVA5ag3.jNDvsxBAC7T.UFLbk.LDkvVKcZI3WPG', // 'changeme'
     },
     {
       userId: 2,
       username: 'maria',
-      password: 'guess',
+      password: '$2b$10$MiMcq5Yr2Bf1n/TTCi8Lve0z664WmjmlVIeIuYl8VCe7zqsPRISIa', // 'guess'
     },
   ];
 
