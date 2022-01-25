@@ -23,10 +23,4 @@ export class AppController {
   getProfile(@Request() req) {
     return req.user;
   }
-
-  @Roles(Role.Admin)
-  @Post('users')
-  createUser(@Request() req) {
-    return req.user;
-  }
 }
