@@ -1,5 +1,25 @@
-import { OmitType } from '@nestjs/mapped-types';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Exclude } from 'class-transformer';
 
-import { UserWithPassword } from './user-with-password.entity';
+import { Role } from 'src/roles/role.enum';
+import { ID } from 'src/types';
 
-export class User extends OmitType(UserWithPassword, ['password'] as const) {}
+@Entity()
+export class User {
+  @PrimaryGeneratedColumn()
+  id: ID;
+
+  @Column({ length: 500 })
+  username: string;
+
+  @Column('text')
+  @Exclude()
+  password: string;
+
+  @Column({
+    type: 'enum',
+    enum: Role,
+    default: Role.User,
+  })
+  roles?: Role[];
+}

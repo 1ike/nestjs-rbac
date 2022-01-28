@@ -4,7 +4,6 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { Role } from 'src/roles/role.enum';
 import { User } from './entities/user.entity';
-import { UserWithPassword } from './entities/user-with-password.entity';
 
 @Injectable()
 export class UsersService {
@@ -37,7 +36,7 @@ export class UsersService {
 
   async findByUsernameWithPassword(
     username: string,
-  ): Promise<UserWithPassword | undefined> {
+  ): Promise<User | undefined> {
     return this.users.find((user) => user.username === username);
   }
 
