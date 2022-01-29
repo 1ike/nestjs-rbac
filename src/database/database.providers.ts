@@ -1,5 +1,7 @@
 import { createConnection } from 'typeorm';
 
+export const DATABASE_CONNECTION = 'DATABASE_CONNECTION';
+
 export const databaseProviders = [
   {
     provide: 'DATABASE_CONNECTION',

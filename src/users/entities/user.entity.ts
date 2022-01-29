@@ -4,6 +4,8 @@ import { Exclude } from 'class-transformer';
 import { Role } from 'src/roles/role.enum';
 import { ID } from 'src/types';
 
+export const USER_REPOSITORY = 'USER_REPOSITORY';
+
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
