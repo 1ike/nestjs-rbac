@@ -3,8 +3,6 @@ import { AuthService } from './auth/auth.service';
 
 import { LocalAuthGuard } from './auth/guards/local-auth.guard';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
-import { Role } from './roles/role.enum';
-import { Roles } from './roles/roles.decorator';
 import { Public } from './auth/public.decorator';
 
 @Controller()
