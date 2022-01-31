@@ -1,20 +1,22 @@
-import { createConnection } from 'typeorm';
+import { createConnection, ConnectionOptions } from 'typeorm';
+import { ConfigService } from '@nestjs/config';
+
+import { DatabaseConfig } from 'src/config/configuration-db';
 
 export const DATABASE_CONNECTION = 'DATABASE_CONNECTION';
 
 export const databaseProviders = [
   {
     provide: 'DATABASE_CONNECTION',
-    useFactory: async () =>
-      await createConnection({
-        type: 'postgres',
-        host: '192.168.1.26',
-        port: 5432,
-        username: 'root',
-        password: 'root',
-        database: 'test',
+    inject: [ConfigService],
+    useFactory: async (configService: ConfigService) => {
+      const dbConfig = configService.get<DatabaseConfig>('database');
+
+      return createConnection({
+        ...dbConfig,
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
         synchronize: true,
-      }),
+      } as ConnectionOptions);
+    },
   },
 ];
