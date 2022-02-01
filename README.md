@@ -1,14 +1,26 @@
-# Nest + RBAC template
+# NestJS + RBAC + TypeORM template
+
+&nbsp;
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) + RBAC template. Also TypeORM planned.
+[NestJS](https://github.com/nestjs/nest) + basic role-based access control (RBAC) + [TypeORM](https://github.com/typeorm/typeorm) template.
+
+&nbsp;
 
 ## Installation
 
 ```bash
 $ npm install
 ```
+
+&nbsp;
+
+## Configuration
+
+Create `.env` file to configure the application (see [.env.example](./.env.example)).
+
+&nbsp;
 
 ## Running the app
 
@@ -23,18 +35,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
+&nbsp;
 
 ## License
 
