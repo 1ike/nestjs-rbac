@@ -15,7 +15,7 @@ export class UsersService {
   ) {}
 
   async create(createUserDto: CreateUserDto) {
-    const saltRounds = this.configService.get<number>('NEST_SALT_ROUNDS');
+    const saltRounds = this.configService.get<number>('SALT_ROUNDS');
     const password = await bcrypt.hash(createUserDto.password, saltRounds);
 
     return this.userRepository.save({
