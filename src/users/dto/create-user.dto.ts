@@ -1,5 +1,16 @@
-import { OmitType } from '@nestjs/mapped-types';
+import { IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { Role } from 'src/roles/role.enum';
 
-import { User } from './../entities/user.entity';
+export class CreateUserDto {
+  @IsString()
+  @IsNotEmpty()
+  username: string;
 
-export class CreateUserDto extends OmitType(User, ['id'] as const) {}
+  @IsString()
+  @IsNotEmpty()
+  password: string;
+
+  @IsOptional()
+  @IsEnum(Role, { each: true })
+  roles?: Role[];
+}
