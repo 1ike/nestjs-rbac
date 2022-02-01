@@ -2,7 +2,6 @@ import { ClassSerializerInterceptor, Module } from '@nestjs/common';
 import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 import { ConfigModule } from '@nestjs/config';
 
-import { AppController } from './app.controller';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
@@ -24,7 +23,6 @@ import configurationAuth from './config/configuration-auth';
       isGlobal: true,
     }),
   ],
-  controllers: [AppController],
   providers: [
     {
       provide: APP_GUARD,
